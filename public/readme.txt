@@ -1,0 +1,1 @@
+o arquivo .htaccess, faz com que o servido apache seja obrigado a passar pelo index

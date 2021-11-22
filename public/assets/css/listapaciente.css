@@ -1,0 +1,173 @@
+
+main.content .caixa-lista-paciente {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    max-width: 90%;
+    min-width: 80%;
+    background-color: #FFF;
+    
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+}
+main.content .caixa-lista-paciente-titulo {
+    background-color: rgb(239, 243, 235);
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+    color: #568132;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+main.content .caixa-lista-paciente-paciente {
+  /*  background-color: rgb(239, 243, 235); */
+    text-align: left;
+    color: #624c3e;
+    padding-left: 20px;
+    border-bottom: solid 1px rgb(239, 243, 235);
+}
+main.content .caixa-lista-paciente-conteudo {
+padding: 0px 20px 0px 20px ;
+
+}
+
+main.content .posicao-form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    align-items: flex-end;
+    align-content: flex-end;
+    }
+    .posicao-form-esquerda {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: flex-start;
+        min-width: 50%;
+        }
+        main.content .posicao-form-direita {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-end;
+            align-items: center;
+            min-width: 50%;
+            }
+            .icofont-exchange{
+                display: none;
+            }
+        .linkSem {
+            text-decoration: none; /* no underline */
+            color: inherit;
+            
+        }
+        .linkSem:hover{
+            text-decoration: inherit; /* no underline */
+            color: inherit;
+            
+        }
+        .linkSem:hover .icofont-exchange{
+            display: inline-block;
+            
+            
+        }
+            
+        .registro {
+            
+            color: #628C3F;
+            text-decoration: none; /* no underline */
+        }
+        .registro:hover {
+            
+            color: rgb(31, 190, 31);
+            text-decoration: inherit; /* no underline */
+        }
+/******formulario**********/
+.posicao-form-lista{
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    
+}
+.form__group {
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 45%;
+}
+.form__field {
+    
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #9b9b9b;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    margin-top: 0px;
+}
+.form__field::placeholder {
+    color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+}
+.form__field:focus {
+    padding-bottom: 6px;
+    
+    border-width: 1px;
+    border-image: linear-gradient(to right, #628C3F, #628C3F);
+    border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #628C3F;
+    font-weight: 700;
+}
+.botao-login{
+    cursor: pointer;
+    padding: 10px 10% 10px 10%;
+    margin: 10px 0px 0px 0px;
+    border-radius: 20px;
+    background-color: #7EB54B;
+    color: #f9f9f9;
+    border:none;
+    
+
+}
+.botao-lado{
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+}
+/* reset input */
+.form__field:required{
+    box-shadow: none;
+}
+.form__field:invalid{
+    box-shadow: none;
+}
+/**footer**/
+

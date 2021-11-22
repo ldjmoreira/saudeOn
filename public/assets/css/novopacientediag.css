@@ -1,0 +1,28 @@
+main.content .caixa-Lista-novopaciente {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    max-width: 90%;
+    min-width: 80%;
+    background-color: #FFF;
+    
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+}
+main.content .caixa-titulo-novo {
+    background-color: rgb(239, 243, 235);
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+    color: #568132;
+}
+main.content .caixa-conteudo-novo {
+padding: 0px 20px 0px 20px ;
+
+}
+main.content .caixa-Lista-novopaciente-esquerda {
+    background-color: rgb(239, 243, 235);
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+    color: #568132;
+}

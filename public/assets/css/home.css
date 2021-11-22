@@ -1,0 +1,31 @@
+img.home-foto {
+    width: 100%;
+    height: 580px;
+}
+
+.home {
+    width: 100%;
+    height: auto;
+
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+}
+.clickable1 {
+    cursor: pointer;
+    background-color: #007bff;
+}
+.clickable2 {
+    cursor: pointer;
+    background-color: #28a745;
+}
+
+.clickable1:hover {
+    background-color: #007bff;
+    box-shadow: -2px 0px 10px 1px rgba(0, 123, 255, 0.4);
+}
+.clickable2:hover {
+    background-color: #28a745;
+    box-shadow: -2px 0px 10px 1px rgba(40, 167, 70, 0.4);
+}
