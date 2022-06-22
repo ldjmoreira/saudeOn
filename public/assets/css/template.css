@@ -1,0 +1,1016 @@
+
+body {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 64px 1fr ;
+    grid-template-areas: 
+        "header header"
+        "sidebar content";
+  
+    height: fit-content;
+    min-height: 100vh;
+    margin: 0;
+    
+    background-color: #DFE5E8;
+    background: linear-gradient(180deg, rgba(166,182,197,1) 0%, rgba(223,229,232,1) 100%);
+    
+}
+@media screen and (max-width: 600px) {
+    body {
+        display: grid;
+        grid-template-columns: 100% ;
+        grid-template-rows: 64px 1fr 64px ;
+        grid-template-areas: 
+            "header"
+            "content"
+            "footer";
+      
+        height: fit-content;
+        min-height: 100vh;
+        margin: 0;
+        
+        background-color: #DFE5E8;
+        background: linear-gradient(180deg, rgba(166,182,197,1) 0%, rgba(223,229,232,1) 100%);
+        
+    }
+}
+.caixa-lista-paciente-concentrador {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.no-style {
+    color: inherit; /* blue colors for links too */
+    text-decoration: none; /* no underline */
+}
+.no-style:hover {
+    color: #d00000; /* blue colors for links too */
+    text-decoration: none; /* no underline */
+}
+
+header.header {
+    grid-area: header;
+    display: flex;
+    background-color:rgb(239, 243, 235);
+    align-items: center; /* faz com que fique centralizado verticalmente */
+    z-index: 5;
+    
+}
+header.header .caixa-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    background-color: rgb(239, 243, 235);
+    height: 64px;
+}
+header.header .logo {
+    min-width: 260px;
+    max-width: 260px;
+    height: 86px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #624c3e;
+    font-size: 2rem;
+    flex-basis: 312px;
+    background: url(../img/saudeon.png) center center/200px no-repeat;
+}
+@media screen and (max-width: 600px) {
+    header.header .logo {
+        min-width: 170px;
+        max-width: 260px;
+        height: 86px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #624c3e;
+        font-size: 2rem;
+        flex-basis: 312px;
+        background: url(../img/saudeon.png) center center/150px no-repeat;
+    }
+}
+
+header.header .area2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #624c3e;
+    font-size: 1.5rem;
+    flex-basis: 85%;
+    height: 100%;
+    
+}
+@media screen and (max-width: 600px) {
+    header.header .area2-area2 {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        color: #624c3e;
+        height: 100%;
+        width: 100%;
+        
+    }
+}
+
+header.header .area2-area2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #624c3e;
+    height: 100%;
+    width: 100%;
+    
+}
+
+header.header .caixa-lista-area2-area2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #624c3e;
+    font-size: 2rem;
+    height: 100%;
+    width: 100%;
+    padding-left: 25px;
+}
+
+
+
+/* botão cadastro */
+header.header .dropdown{
+    position: relative;
+    height: 100%;
+    
+}
+header.header .nodropdown{
+    position: relative;
+    height: 100%;
+    
+}
+header.header .cadastro-button {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: #624c3e;
+    font-size: 2rem;
+    flex-basis: 68%;
+    height: 100%;
+    margin-left: 5px;
+    cursor: pointer;
+}
+header.header .cadastro-content {
+    display: none;
+    position: absolute;
+    min-width: 100%;
+    background-color: #f9f9f9;
+    padding: 15px 0px;
+    z-index: 100;
+    
+}
+
+header.header .dropdown:hover .cadastro-content {
+    display: block; /*faz o hover trabalhar */
+    border-radius: 5px;
+    min-width: 150%;
+    border: 2px solid #9b9b9b;
+    background-color: white;
+}
+
+header.header .cadastro-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+header.header .cadastro-content a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #222;
+    padding: 7px;
+    font-size: 1.1rem;
+}
+
+header.header .cadastro-content a:hover {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+header.header .dropdown:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+header.header .perfil {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    color: #624c3e;
+    font-size: 2rem;
+    flex-basis: 14%;
+    height: 100%;
+    margin-left: 5px;
+   
+}
+/* ----FIM-- botao cadastro ----*/
+/* botão perfil */
+header.header .perfil-button{
+    cursor: pointer;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: #624c3e;
+    font-size: 2rem;
+
+    height: 100%;
+    margin-left: 5px;
+}
+header.header .perfil-button .user-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b7b7a4;
+    border-radius: 100%;
+    padding: 4px;
+    margin-right: 2px;
+    
+}
+.icofont-ui-user{
+font-size: 23px;
+padding: 4px;
+}
+header.header .perfil-paciente2{
+
+    display: flex;
+    align-items: center;
+    color: #624c3e;
+
+
+    height: 100%;
+    margin-left: 5px;
+}
+.perfil-foto {
+   height: 70px;
+    color: rgba(0, 0, 0,0 );
+    background: url(../img/avatar.png)  center/70px no-repeat;
+}
+header.header .perfil-content {
+    display: none;
+    position: absolute;
+    min-width: 100%;
+    background-color: #f9f9f9;
+    padding: 15px 0px;
+    z-index: 100;
+    
+}
+header.header .dropdown:hover .perfil-content {
+    display: block; /*faz o hover trabalhar */
+    border-radius: 5px;
+    min-width: 100%;
+    border: 2px solid #9b9b9b;
+    background-color: white;
+    margin-right: 80px;
+}
+
+header.header .perfil-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+header.header .perfil-content a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #222;
+    padding: 7px;
+    font-size: 1.1rem;
+}
+
+header.header .perfil-content a:hover {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+header.header .dropdown:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+
+.ghost {
+    width: 260px;
+    height: 42.83px;
+    flex-grow: 1;
+    position: fixed;
+    top: 111px;
+    left: 0px;
+    cursor: pointer;
+
+}
+
+.ghost:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+aside.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: sidebar;
+    box-shadow: -5px 0px 25px 1px rgba(0, 0, 0, 0.4);
+    background-color: #628C3F;
+    
+}
+
+aside.sidebar .menu {
+    width: 260px;
+    flex-grow: 1;
+    position: fixed;
+}
+
+aside.sidebar .menu2 {
+    width: 260px;
+    height: 200px;
+    flex-grow: 1;
+    position: fixed;
+    top: 368px;
+    left: 0px;
+    border:1px solid #96BD48;
+    overflow:scroll;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+
+aside.sidebar .menu ul.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+aside.sidebar .menu2 ul.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside.sidebar .menu li.nav-item {
+    margin: 0;
+    padding: 10px 10px 10px 25px;
+    border-bottom: 1px solid #96BD48;
+    cursor: pointer;
+}
+aside.sidebar .menu li.nav-item3 {
+    margin: 0;
+    padding: 10px 10px 10px 25px;
+    border-bottom: 1px solid #96BD48;
+
+}
+aside.sidebar .menu2 li.nav-item {
+    margin: 0;
+    padding: 10px 10px 10px 25px;
+    border-bottom: 1px solid #96BD48;
+}
+aside.sidebar .menu2 li.nav-item2 {
+    margin: 0;
+    padding: 10px 10px 10px 25px;
+    border-bottom: 1px solid #96BD48;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+
+
+aside.sidebar .menu li.nav-item a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+aside.sidebar .menu li.nav-item3 a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+aside.sidebar .menu2 li.nav-item a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+aside.sidebar .menu2 li.nav-item2 a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+aside.sidebar .menu li.nav-item .lateral-nome {
+    width: 90%;
+    margin-left: 2%;
+}
+aside.sidebar .menu li.nav-item3 .lateral-nome {
+    width: 90%;
+    margin-left: 2%;
+}
+aside.sidebar .menu2 li.nav-item .lateral-nome {
+    width: 90%;
+    margin-left: 2%;
+}
+aside.sidebar .menu div.lateral-lista-paciente {
+    border-left: 3px solid #96BD48;
+    padding-left: 5px;
+   
+}
+aside.sidebar .menu div.lateral-lista-pacienteSel {
+    border-left: 3px solid #9bff30;
+    padding-left: 5px;
+   
+}
+aside.sidebar .menu2 div.lateral-lista-paciente {
+    border-left: 3px solid #96BD48;
+    padding-left: 5px;
+   
+}
+
+aside.sidebar .menu li.nav-item:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+aside.sidebar .menu2 li.nav-item:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+aside.sidebar .menu li.nav-item:active {
+    background-color: #92D050;
+}
+
+
+aside.sidebar .menu li.nav-item a {
+    font-size: 1.0rem;
+    color: white;
+    text-decoration: none;
+}
+aside.sidebar .menu li.nav-item3 a {
+    font-size: 1.0rem;
+    color: white;
+    text-decoration: none;
+}
+aside.sidebar .menu2 li.nav-item2 a {
+    font-size: 1.0rem;
+    color: white;
+    text-decoration: none;
+}
+aside.sidebar .menu2 li.nav-item a {
+    font-size: 1.0rem;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+aside.sidebar .sidebar-widgets {
+    position: sticky;
+    bottom: 20px;
+}
+
+aside.sidebar .sidebar-widget {
+    display: flex;
+    align-items: center;
+}
+
+aside.sidebar .sidebar-widget .icon {
+    font-size: 3.5rem;
+    margin: 2px 10px 2px 0px;
+}
+
+aside.sidebar .sidebar-widget .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+/**/
+.sidenav {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #628C3F;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+    border-bottom: 2px solid white !important;
+    border-top:2px solid #96BD48 !important ;
+   /* border-left: ;*/
+    border-right:2px solid #96BD48 !important ;
+  }
+  
+  .sidenav-mod {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #628C3F;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+    border-bottom: 2px solid white !important;
+    border-top:1px solid #96BD48 !important ;
+   /* border-left: ;*/
+    border-right:1px solid #96BD48 !important ;
+    
+  }
+  .closebtn-box  {
+    color: white;
+    text-align: right;
+    right: 25px;
+    font-size: 36px;
+    border-top:1px solid white !important ;
+  }
+  .sidenav-menu-box  {
+
+    right: 25px;
+    font-size: 36px;
+
+    
+    border-top:1px solid #96BD48 !important ;
+  }
+  .sidenav-menu-box:last-child  {
+
+    right: 25px;
+    font-size: 36px;
+
+    
+    border-top:1px solid #96BD48 !important ;
+    border-bottom:1px solid #96BD48 !important ;
+  }
+  .sidenav-menu-box a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav-menu-box a:hover {
+    color: #f1f1f1;
+  }
+  
+
+/**/
+.botao-left{
+    cursor: pointer;
+    padding: 10px 10% 10px 10%;
+    margin: 10px 0px 0px 0px;
+    color: #f9f9f9;
+    border: 2px solid white;
+    text-align: center;
+
+}
+
+.division {
+    widows: 80%; /* é como se fosse colunas */
+    border: solid 1px #EEE;
+}
+
+aside.sidebar .info .main {
+    font-size: 2rem;
+}
+iframe.asideButtonLeft {
+    width: 260px;
+    height: 42.83px;
+    border: none;
+}
+.menu-paciente-paciente {
+    display: none;
+}
+.menu-paciente-prontuario {
+    display: none;
+}
+
+main.content {
+    grid-area: content;
+    margin: 20px;
+    /*margin-left: 400px;
+    margin-right: 400px;*/
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    height: auto;
+    justify-content: center;
+     
+}
+.home .content-title {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #CCC;
+}
+
+.home .content-title .icon {
+    font-size: 3rem;
+}
+
+.home .content-title h1 {
+    color: #444;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.home .content-title h2 {
+    color: #888;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 0;
+}
+main.content .view-padrao2 {
+
+    max-width: 90%;
+    min-width: 90%;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+}
+
+main.content  .caixa-padrao {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    max-width: 90%;
+    min-width: 90%;
+    background-color: #FFF;
+    
+    border-radius: 10px;
+    margin: 20px 20px 20px 20px;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+}
+main.content .caixa-padrao-titulo {
+    background-color: rgb(239, 243, 235);
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+    color: #568132;
+}
+main.content .caixa-padrao-conteudo {
+    padding: 20px 20px 10px 20px ;
+}
+main.content .caixa-padrao-conteudo-esquerda-foto {
+float: left;
+width: 30%;
+background-color: none;
+display: flex;
+justify-content: center;
+border-right: solid 5px #71B340;
+margin-right: 5px;
+ 
+}
+main.content .caixa-padrao-conteudo-direita-conteudo {
+    float: left;
+    width: 68%;
+    background-color: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+main.content .caixa-padrao-conteudo-botoes {
+    float: right;
+    width: 100%;
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+
+.botao-footer2{
+    width: 100;
+    height: auto;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+
+.record {
+    font-size: 2.2rem;
+}
+
+.summary-boxes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.summary-box {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    min-width: 100px;
+    max-width: 350px;
+    
+}
+
+.summary-box .icon {
+    font-size: 3.5rem;
+}
+
+.summary-box .title {
+    font-size: 1.5rem;
+}
+
+.summary-box .value {
+    font-size: 2rem;
+}
+footer.footer {
+    display: flex;
+    grid-area: footer;
+    justify-content: flex-end;
+
+    padding-right: 20px;
+    font-size: 1.2rem;
+    padding: 10px;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+    background-color: #628C3F;
+    color: white;
+    display: none;
+}
+footer.footer .space-footer {
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+    footer.footer {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 20px;
+        font-size: 1.2rem;
+        grid-area: footer;
+        background-color: #628C3F;
+        color: white;
+        position: sticky;
+        bottom:0 ;
+        box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+
+    }
+}
+
+/**************************************************/
+/*ListaPaciente */
+
+
+/*************************************************/
+/*cores background */
+.verde-92D050 {
+    background-color: #92D050
+}
+.verde-568132 {
+    background-color: #568132
+}
+/*colors */
+.cverde-568132 {
+    color: #568132
+}
+/***form css */
+form {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+}
+/******formulario**********/
+.standard .posicao-form-lista{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    
+}
+.standard .form__group {
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 90%;
+}
+.standard .form__field {
+    
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #9b9b9b;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    margin-top: 0px;
+}
+.standard .form__field::placeholder {
+    color: transparent;
+}
+.standard .form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+.standard .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+}
+.standard .form__field:focus {
+    padding-bottom: 6px;
+    
+    border-width: 1px;
+    border-image: linear-gradient(to right, #628C3F, #628C3F);
+    border-image-slice: 1;
+}
+.standard .form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #628C3F;
+    font-weight: 700;
+}
+.standard .botao-login{
+    cursor: pointer;
+    padding: 10px 10% 10px 10%;
+    margin: 10px 0px 0px 0px;
+    border-radius: 20px;
+    background-color: #7EB54B;
+    color: #f9f9f9;
+    border:none;
+    
+
+}
+.standard .botao-lado{
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+}
+.standard .botao-ladox{
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+
+}
+/* reset input */
+.standard .form__field:required {
+    box-shadow: none;
+}
+.standard .form__field:invalid {
+    box-shadow: none;
+}
+.link-no-style {
+    color: inherit; /* blue colors for links too */
+    text-decoration: none; /* no underline */
+}
+
+.link-no-style:hover {
+    color: inherit; /* blue colors for links too */
+    text-decoration: none; /* no underline */
+}
+
+.a-link-button {
+    background-color: #71B340;
+    padding: 6px 12px 6px 12px;
+    border-radius: 6px;
+    color: white; /* blue colors for links too */
+    text-decoration: none; /* no underline */
+}
+
+.a-link-button:hover {
+    background-color: #5E9516;
+    padding: 6px 12px 6px 12px;
+    border-radius: 6px;
+    color: white; /* blue colors for links too */
+    text-decoration: none; /* no underline */
+}
+
+.a-link-button-circle {
+    background-color: rgb(220,53, 69);
+    padding: 6px 12px 6px 12px;
+    border-radius: 10px;
+    color: white; /* blue colors for links too */
+    text-decoration: none; /* no underline */
+
+
+}
+
+.a-link-button-circle:hover {
+    background-color: rgb(200,35, 51);
+    padding: 6px 12px 6px 12px;
+    border-radius: 10px;
+    color: white; /* blue colors for links too */
+    text-decoration: none; /* no underline */
+}
+
+.form-control2 {
+    font-family: system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+  
+  }
+
+  input[type="radio"] {
+    
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+  }
+
+  .form-control2:focus-within {
+    color: red;
+  }
+
+  .button-lor {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 30px;
+  }
+
+.btnlor{
+
+    border: none;
+    color: rgb(1,129, 177);
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+
+}
+/* scrollbar */
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        
+        background: rgb(239,243, 235); 
+        
+      }
+       
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: rgb(170,185, 200); 
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background:  rgb(136, 142, 148); 
+      }
+

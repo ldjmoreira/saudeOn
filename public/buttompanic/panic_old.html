@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="css/icofont.min.css">
+        <link rel="stylesheet" href="css/template.css">
+        <link rel="stylesheet" href="css/comum.css">
+        <title>botao reconhecer</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <nav class="menu mt-3" id="corMenu">
+            <ul class="nav-list">
+                <li class="nav-item _nav-item-ciencia"> 
+                    <a>
+                        <i class="icofont-alarm"></i>
+                        <div class="lateral-nome">
+                            &nbspReconhecer Emergência
+                        </div>          
+                    </a>
+                </li>
+            </ul>
+        </nav>      
+    </body>
+	            <script>
+                var toggle = 1;
+                var item = [];
+				  item[0] = "0";
+                var strpath = window.location.href;
+                var poss = strpath.indexOf("?");    /* Acha a ? interrogação, vai pegar o que tem depois */
+
+               function displayResult2() {
+                /*  var xhttp = new XMLHttpRequest();
+                  var inpObj = document.getElementById("fname").value;
+                  var strreq = "/testeocorrenciapanico";
+                  strreq = strreq + inpObj;
+                  xhttp.open("POST", strreq, true);
+                  xhttp.send(concentrador);
+                  document.getElementById("tempch").innerHTML = "";*/
+                }
+
+        setInterval(function() {
+     
+        var xhttp = new XMLHttpRequest();
+        var strreq = "http://192.168.1.8:8401/testeocorrenciapanico?";
+		 var inpobj;
+		 if (poss == -1) { inpobj = "0"; } else {inpobj = strpath.substring(poss+1);}  /* Adiciona número do profissional */
+        strreq = strreq + inpobj;
+
+        xhttp.open("GET", strreq, true);
+        xhttp.onload = function() {	
+            if (xhttp.readyState == xhttp.DONE && xhttp.status == 200) {      
+            var i,po;      
+            var varstr = xhttp.responseText;
+            item[0] = varstr;
+			/*
+            for (i = 0; i < 2; i++ ) {        
+                pos = varstr.indexOf("-");        
+                if (pos == -1) {           
+                item[i] = varstr; break;        
+                }        
+                item[i] = varstr.substring(0,pos);        
+                varstr = varstr.substring(pos+1);      
+            } 
+            */	   
+
+            }
+        };    
+        if (toggle == 0 && item[0] != "0" ) {  
+            document.getElementById("corMenu").style.backgroundColor = "#FF5D5D"; 
+            toggle = 1;  
+        } else {     
+            document.getElementById("corMenu").style.backgroundColor = "#628C3F"; 
+            toggle = 0;      
+        }
+
+        xhttp.send();
+        }, 2000);
+
+        </script>
+	
+</html>

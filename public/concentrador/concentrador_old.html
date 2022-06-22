@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  position: absolute;
+  text-align: center;
+  font-size: 38.4pt;
+  line-height: 115%;
+  font-family: "Courier";
+}
+
+.nome-up {
+  position: absolute;
+  top: 0.2%;
+  left: 2%;
+  font-size: 13.6pt;
+  color: #00FF00;
+}
+
+
+.bottom-left {
+  position: absolute;
+  top: 13%;
+  left: 40%;
+  color: #00FF50;
+}
+
+.top-left {
+  position: absolute;
+  top: 31.4%;
+  left: 40%;
+  color: #C800B4;
+}
+
+.top-right {
+  position: absolute;
+  top: 49.9%;
+  left: 40%;
+  color: #00B4C8;
+}
+
+.bottom-right {
+  position: absolute;
+  top: 67%;
+  left: 40%;
+  color: #B4C800;
+}
+
+.centered {
+  position: absolute;
+  top: 85%;
+  left: 40%;
+  color: white;
+}
+.myCanvaspos {
+  position: absolute;
+  top: 43%;
+  left: 66%;
+}
+</style>
+</head>
+<body>
+<!-- <p id="debug" style="color:red;font-size:130%;" >QQQQ</p> -->
+<b>
+<div class="container">
+  <img src="imagens/telaprincipal2.png" width="590" height="520" >
+  <div class="nome-up"  id = "nomech">-- Medido em: 00/00/00 00:00:00</div>
+  <div class="bottom-left"  id = "fcch" >--</div>
+  <div class="top-left"  id = "panich">--/--</div>
+  <div class="top-right" id = "spo2ch">--</div>
+  <div class="bottom-right" id = "respch">--</div>
+  <div class="centered" id = "tempch">--</div>
+  <div class="myCanvaspos" ><canvas id="myCanvas" width="185" height="95" ></div>
+</div>
+</b>
+</body>
+
+
+<script>
+var toggle = 1;
+var item = [];
+var strpath = window.location.href;
+var poss = strpath.indexOf("?");    /* Acha a ? interroga��o, vai pegar o que tem depois */
+var concent = strpath.substring(poss+1);
+var k = 0.1;
+
+var concentrador = concent; /* "###";           vai ser modificado despois por uma busca */
+
+
+setInterval(function() {
+  /*var toggle = 1;*/      
+  
+  /* document.getElementById("fname").value = concentrador; */
+
+  var xhttp = new XMLHttpRequest();
+
+  var inpObj = concentrador;
+  var strreq = "http://192.168.1.8:8401/sinaisvitais?";
+  strreq = strreq + inpObj;
+  xhttp.open("GET", strreq, true);
+  xhttp.onload = function() {	
+    if (xhttp.readyState == xhttp.DONE && xhttp.status == 200) {      
+      var i,po;      
+      var varstr = xhttp.responseText;      
+      for (i = 0; i < 11; i++ ) {        
+        pos = varstr.indexOf("-");        
+        if (pos == -1) {           
+          item[i] = varstr;
+          if (item[i] == "0.0") item[i] = "--"; 
+          //break;        
+        }        
+        item[i] = varstr.substring(0,pos);       /* A posi��o final n�o est� incluida na string */
+        if (item[i] == "0") item[i] = "--";
+        varstr = varstr.substring(pos+1);      
+      } 	   
+    /*  document.getElementById("datach").innerHTML = item[1];	   */
+      document.getElementById("nomech").innerHTML = item[0] + " Atualizado: " + item[1] + " " + item[2];	   
+      document.getElementById("fcch").innerHTML   = item[3];	   
+      document.getElementById("panich").innerHTML = item[4] + "/" + item[5];	   
+      document.getElementById("spo2ch").innerHTML = item[6];	   
+      document.getElementById("respch").innerHTML = item[7];	  
+      document.getElementById("tempch").innerHTML = item[8];
+
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      ctx.beginPath();                        /* width="185" height="95" */
+      ctx.strokeStyle = "#00B4C8";
+      ctx.clearRect(0, 0, 185, 95);
+     /* ctx.moveTo(0,95);   */
+     /* ctx.lineTo(185, 0); */
+      var i;
+      for (i=0; i<185; i++) {
+        ctx.moveTo(i, 95);
+        ctx.lineTo(i, 20 - 15 * Math.sin((i * Math.PI / 30) + k));
+	  }
+      ctx.stroke();
+      k = k + 0.78539816;
+      if (k > 6.2831853) k = 0.1;
+	}
+  }; 
+/*   
+  if (toggle == 0 && item[9] == "1" ) {  
+    document.getElementById("panicoch").innerHTML = "[P�NICO]"; toggle = 1;  
+  } else {     
+    document.getElementById("panicoch").innerHTML = ""; 
+    toggle = 0;      
+  }
+*/
+/*  document.getElementById("debug").innerHTML = strpath + " " + concent; */
+  xhttp.send();
+}, 2000);
+</script>
+</html> 

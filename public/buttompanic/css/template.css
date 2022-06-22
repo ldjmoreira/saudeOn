@@ -1,0 +1,35 @@
+* {margin: 0; padding: 0; font-size: 96%;  box-sizing: border-box;
+}
+
+.menu {
+background-color: #628C3F;
+
+}
+.menu ul.nav-list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+.menu li.nav-item {
+margin: 0;
+padding: 10px 10px 10px 25px;
+border-bottom: 1px solid #96BD48;
+
+}
+.menu li.nav-item a {
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+align-items: center;
+}
+    .menu li.nav-item:hover {
+background-color: rgba(0, 0, 0, 0.15);
+}
+    .menu li.nav-item a {
+font-size: 1.0rem;
+color: white;
+text-decoration: none;
+}
+.icofont-alarm {
+margin-right: 10px;
+    }
