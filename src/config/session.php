@@ -1,18 +1,31 @@
 <?php
 
-function requireValidSession($requiresAdmin = false) {
+function requireValidSession($numeroTela) {
     $ola = IP_SERVIDOR_IN;
     
     $user = $_SESSION['user'];
+    $permission = $_SESSION['permission'][$numeroTela];
+
+    if($user->codigo_profissional == 0 ){
+        $findme = "0";
+    }else {
+        $findme = $user->CBO;
+    }
+    
+    $mystring = $permission->identificacao;
 
     if(!isset($user)) {
         header('Location: login.php');
         exit();
-    } elseif($requiresAdmin && !$user->is_admin) {
+    } elseif(!$user->is_admin) {// mudar oara is_admin
 
-        addErrorMsg('<h6><b> Seu perfil nao tem acesso a pagina selecionada!</b></h6>');
-        header('Location: EscolhaPaciente.php');
-        exit();
+        if(strpos($mystring, $findme) === false ){
+
+            addErrorMsg('<h6><b> Seu perfil nao tem acesso a pagina selecionada!</b></h6>');
+            header('Location: login.php');
+            exit();
+        }
+
     }else {
         if(isset($_GET['sound'])) {
             //toggle

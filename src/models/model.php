@@ -142,6 +142,19 @@ class Model {
 
         
     }
+    public static function getOneLogin2($filters = [],$columns = '*'){
+        $class = get_called_class();
+
+
+
+        $result = static::getResultSetFromLogin2($filters,$columns);
+
+
+        //retorna com todos os campos
+        return $result ? new $class($result->fetch_assoc()) : null;
+
+        
+    }
 
     public static function getOneFix($tableName,$filters = [],$columns = '*'){
         $class = get_called_class();
@@ -229,7 +242,10 @@ class Model {
     }
 
     public static function getResultSetFromLogin($filters=[],$columns = '*') {
-        $sql = "SELECT id AS id_Op, name, email, password, perfil, codigo_profissional, is_admin, start_date, end_date FROM " 
+        $sql = "SELECT id AS id_Op, 
+        name, email, password, perfil, 
+        codigo_profissional, is_admin, start_date, end_date 
+        FROM " 
         .static::$tableName
         .static::getFilters($filters);
 
@@ -245,6 +261,59 @@ class Model {
            return $result;
 
        }
+    }
+    public static function getResultSetFromLogin2($filters=[],$columns = '*') {
+        $sql = "SELECT id AS id_Op, 
+        users.name, 
+        users.email, 
+        users.password, 
+        users.codigo_profissional, 
+        users.is_admin, 
+        users.start_date, 
+        users.end_date,
+        p.CBO 
+        FROM " 
+        .static::$tableName .
+       " LEFT JOIN profissionals p 
+ON users.codigo_profissional = p.profissional_id "
+        .static::getFilters($filters);
+
+
+
+       $result = Database::getResultFromQuery($sql);
+
+
+
+       if($result->num_rows ===0){
+           return null;
+       } else {
+           return $result;
+
+       }
+    }
+
+    public static function loadPermission() {
+        $objects=[];
+        $sql = "SELECT * FROM permissao " ;
+       $result = Database::getResultFromQuery($sql);
+
+
+        if($result){
+
+
+            $class = get_called_class();
+
+            while($row = $result->fetch_assoc()){
+                array_push($objects, new $class($row));
+
+            }
+
+    
+
+            return $objects;
+        }
+
+
     }
 
     private static function getFilters($filters){

@@ -1,6 +1,7 @@
 <?php
 session_start();
-requireValidSession();
+$numerotela = tudoIndex;
+requireValidSession($numerotela);
 $exception = null;
 
 if(count($_POST) > 0) {

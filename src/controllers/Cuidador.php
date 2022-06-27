@@ -1,6 +1,7 @@
 <?php
 session_start();
-requireValidSession(true);
+$numerotela = tudoIndex;
+requireValidSession($numerotela);
 requireValidSessionPac();
 $cuidador=[];
 $exception = null;

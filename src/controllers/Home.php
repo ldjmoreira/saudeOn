@@ -1,9 +1,14 @@
 <?php
 
 session_start();
-requireValidSession();
+$numerotela = homeIndex;
+
+requireValidSession($numerotela);
 $exception = null;
 $user = $_SESSION['user'];
+$permission = $_SESSION['permission'];
+
+
 $ola = IP_SERVIDOR_IN;
 
 //$pacInfo= $_SESSION['paciente'];// defined in login
@@ -97,6 +102,7 @@ loadTemplateView2('Home',
 'operadoresMon'=>$operadoresMon,
 'pacientesMon'=>$pacientesMon,
 'concentradoresid'=>$concentradoresid,
+'exception' => $exception
 //'records' => $records
 ],$shirt);
 

@@ -1,7 +1,8 @@
 <?php
 //not used
 session_start();
-requireValidSession();
+$numerotela = tudoIndex;
+requireValidSession($numerotela);
 
 
 

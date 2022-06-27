@@ -1,7 +1,7 @@
 <?php
 //concerns about: se o operador não estiver preenchido, ou outro campo, pode ter problema
 session_start();
-requireValidSession(true);
+requireValidSession($numerotela);
 
 
 $exception = null;

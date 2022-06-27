@@ -1,6 +1,7 @@
 <?php
 session_start();
-requireValidSession(true);
+$numerotela = tudoIndex;
+requireValidSession($numerotela);
 
 
 $user = $_SESSION['user'];

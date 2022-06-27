@@ -4,7 +4,7 @@ $user = $_SESSION['user'];
 
 if(isset($user)) {
     
-//requireValidSession();
+//requireValidSession($numerotela);
 //array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5)
 $arr = "olax";
 $arr2 = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);

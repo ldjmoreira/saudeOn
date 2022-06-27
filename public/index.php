@@ -11,8 +11,14 @@ if($uri === '/' || $uri === '' || $uri === '/index.php'){
     
 }
 
+if (file_exists(CONTROLLER_PATH . "/{$uri}")) {
+    require_once(CONTROLLER_PATH . "/{$uri}");
+} else {
+    $uri = '/notFound.php';
+    require_once(CONTROLLER_PATH . "/{$uri}");
+}
 
-require_once(CONTROLLER_PATH . "/{$uri}");
+
 
 
 //phpinfo();

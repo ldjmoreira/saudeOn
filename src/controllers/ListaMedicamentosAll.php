@@ -1,6 +1,7 @@
 <?php
 session_start();
-requireValidSession();
+$numerotela = tudoIndex;
+requireValidSession($numerotela);
 requireValidSessionPac();
 
 $pacInfo= $_SESSION['paciente'];

@@ -29,6 +29,8 @@ function loadTemplateView2($viewName, $params = array(),$params2=[]){
 
     $user = $_SESSION['user'];      // defined in login
 
+
+
     $ipUser = $_SESSION['IPIN'][0]; // defined in login ip_interno:81
     $ipUser1 = $_SESSION['IPIN'][1];// defined in login ip_interno:8401
 

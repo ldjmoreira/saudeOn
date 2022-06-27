@@ -297,9 +297,9 @@
     </form>
     
 
-    <div class="footer w3-hide" id="footer-vis">
+    <div class="footer2 w3-hide" id="footer-vis">
         <div class="content-footer">
-            <h4>salvar modificações? </h4>
+            <h4>salvar modificações?? </h4>
         </div>
         <div class="botao-footer">
         <button type="button" class="btn btn-danger ml-2" onclick="goBack();">voltar</button>

@@ -13,39 +13,31 @@
                 <a >
                     <i class="icofont-male  mr-2"></i>
                     <div class="lateral-nome">
-                        Cadastro de paciente
+                    Cadastro de cuidados
                     </div>
-                    
+                    <i id="ico-paciente" class="icofont-simple-right ml-2"></i>
                 </a>
             </li>
             <li   class="nav-item nav-paciente-filho  w3-animate-top demoAcc ">
                 <a href="novoPaciente.php">
                     
                     <div class="lateral-lista-paciente ml-5">
-                    Limpar campos
+                    Principal
                     </div>
                 </a>
             </li>
-            <li   class="nav-item nav-paciente-filho  w3-animate-top demoAcc ">
-                <a href="novoPaciente.php">
-                    
-                    <div class="lateral-lista-paciente ml-5">
-                    Salvar
-                    </div>
-                </a>
-            </li>
-            
             <li class="nav-item">
-                <a href="ListaPaciente.php">
+                <a href="ListaProgCuidados.php">
                     <i class="icofont-simple-left mr-2"></i>
                     <div class="lateral-nome">
                     Voltar
                     </div>
                 </a>
             </li>
-            
+
         </ul>
     </nav>
+
 
     
 </aside>

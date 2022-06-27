@@ -1,7 +1,8 @@
 
 <?php
 session_start();
-requireValidSession(true);
+$numerotela = tudoIndex;
+requireValidSession($numerotela);
 
 $exception = null;
 $paciente =[];
@@ -32,6 +33,7 @@ if(count($_POST) === 0 && isset($_GET['update'])) {
    
 
 } elseif(count($_POST) > 0) {
+
     try {
         $algo = idPacienteNumber();
 

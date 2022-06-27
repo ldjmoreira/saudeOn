@@ -20,11 +20,10 @@ class Login extends Model {
 
     public function checkLogin(){
         $this->validate();
-        $user = User::getOneLogin(['email'=> $this->email]);
-
+        $user = User::getOneLogin2(['email'=> $this->email]);
         if($user) {
             if($user->end_date){
-                throw new AppException('Usuario está desligado da empresa'); 
+                throw new AppException('Usuario sem permissão de acesso'); 
             }
             if(password_verify($this->password, $user->password)){
                 return $user;
@@ -33,6 +32,14 @@ class Login extends Model {
 
         //setcookie('tentativas',$_SESSION['tentaiva'],$exp);
         throw new AppException('Usuario e senha inválidos'); 
+    }
+
+    public static function loadPermission(){
+
+        $permissions = model::loadPermission();
+
+        return $permissions;
+
     }
 
     public function checkIP(){ 

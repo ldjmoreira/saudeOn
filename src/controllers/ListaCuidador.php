@@ -1,10 +1,12 @@
 <?php
 session_start();
-requireValidSession();
+$numerotela = tudoIndex;
+requireValidSession($numerotela);
 requireValidSessionPac();
 
 $user = $_SESSION['user'];
 $pacInfo= $_SESSION['paciente'];
+
 
 if(isset($_GET['delete'])) {
 

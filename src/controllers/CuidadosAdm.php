@@ -1,7 +1,8 @@
 <?php
 //concerns about: se o operador não estiver preenchido, ou outro campo, pode ter problema
 session_start();
-requireValidSession();
+$numerotela = tudoIndex;
+requireValidSession($numerotela);
 requireValidSessionPac();
 
 $exception = null;
@@ -57,6 +58,6 @@ $CuidadosAdm = Assets::getCuidados($_GET['update']);
 
 
 
-    loadTemplateView3('CuidadosAdm','leftProfPac',
+    loadTemplateView3('CuidadosAdm','leftCuidadosAdm',
     ['exception' => $exception,'CuidadosAdm'=>$CuidadosAdm]);
 

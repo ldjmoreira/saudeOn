@@ -1,7 +1,8 @@
 <?php
 //concerns about: se o operador não estiver preenchido, ou outro campo, pode ter problema
 session_start();
-requireValidSession();
+$numerotela = tudoIndex;
+requireValidSession($numerotela);
 requireValidSessionPac();
 
 

@@ -1,6 +1,7 @@
 <?php
 session_start();
-requireValidSession(true);
+$numerotela = tudoIndex;
+requireValidSession($numerotela);
 $ola = IP_SERVIDOR_IN;
 
 $user = $_SESSION['user'];

@@ -13,7 +13,7 @@
         <div class="mb-4  posicao-form " >
                 <div class="posicao-form-esquerda ">
     
-                <a class="registro posicao-form-esquerda" ´
+                <a class="registro posicao-form-esquerda" 
                 href="novoPaciente.php"> 
                 <i class="icofont-plus-circle h4 mt-1   mr-2 "></i> 
                 <h4>Adicionar novo registro </h4>
@@ -32,7 +32,7 @@
             
             </div>
 
-        
+            <div class="table-responsive">  
             <table class="table table-bordered table-striped table-hover" id="myTable">
                 <thead>
                     <th>ID Paciente</th>
@@ -72,6 +72,7 @@
 
                 </tbody>	
             </table>
+            </div>
         </div>
     </div>
 

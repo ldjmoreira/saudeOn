@@ -16,11 +16,16 @@ if(count($_POST) > 0) {
     try {
         $user = $login->checkLogin();
 
+        $permission = $login->loadPermission();
+        
+
         $user->password = '';
 
         $_SESSION['user'] = $user;
         $_SESSION['sound'] = 1;
         $_SESSION['icone'] = 'icofont-volume-down';
+        $_SESSION['permission'] = $permission;
+
 
         $IPuser = $login->checkIP();
 
@@ -32,6 +37,8 @@ if(count($_POST) > 0) {
 
         $dbLoginn->insertSTR("users_connections",['name','ip','date']);
 
+        // futuramente a tela inicial será reconhecida através do dado do users, na qual o campo
+        // perfil quer sera  renomeado para tela ira iniciar a tela inicial 
         header("Location: Home.php");
         
     } catch(AppException $e) {

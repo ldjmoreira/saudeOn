@@ -1,9 +1,9 @@
-<?php 
 
-
-?>
 
 <main class="content w3-animate-opacity">
+<?php
+include(TEMPLATE_PATH . "/messages.php");
+?>
 <div class="home">
 <div class="content-title mb-4">
     

@@ -25,6 +25,7 @@
 
             </div>
             
+            <div class="table-responsive">            
             <table class="table table-bordered table-striped table-hover" id="myTable">
                 <thead>
                 <?php  
@@ -65,6 +66,7 @@
 
                 </tbody>	
             </table>
+            </div>
         </div>
     </div>
 

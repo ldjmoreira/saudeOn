@@ -362,3 +362,11 @@ input:focus, textarea:focus, select:focus{
 .form__field:required, .form__field:invalid {
     box-shadow: none;
 }
+/**/
+.content-notfound {
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

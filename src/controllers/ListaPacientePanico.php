@@ -1,6 +1,7 @@
 <?php
 session_start();
-requireValidSession();
+$numerotela = telalistaPacientePanicoIndex;
+requireValidSession($numerotela);
 $exception = null;
 $user = $_SESSION['user'];
 $ola = IP_SERVIDOR_LOCAL;

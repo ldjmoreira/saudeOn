@@ -496,7 +496,7 @@ aside.sidebar .sidebar-widget .info {
     height: 100%;
     width: 250px;
     position: fixed;
-    z-index: 1;
+    z-index: 999;
     top: 0;
     left: 0;
     background-color: #628C3F;
@@ -567,7 +567,36 @@ aside.sidebar .sidebar-widget .info {
   .sidenav-menu-box a:hover {
     color: #f1f1f1;
   }
+  /**/
+  .sidenav-menu-box-filho  {
+
+
+    font-size: 36px;
+    width: 100%;
+    
+    border-top:1px solid #96BD48 !important ;
+  }
+  .sidenav-menu-box-filho:last-child  {
+
+    right: 25px;
+    font-size: 36px;
+
+    
+    border-top:1px solid #96BD48 !important ;
+    border-bottom:1px solid #96BD48 !important ;
+  }
+  .sidenav-menu-box-filho a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
   
+  .sidenav-menu-box-filho a:hover {
+    color: #f1f1f1;
+  }
 
 /**/
 .botao-left{
@@ -666,6 +695,9 @@ main.content .caixa-padrao-titulo {
 main.content .caixa-padrao-conteudo {
     padding: 20px 20px 10px 20px ;
 }
+main.content .caixa-padrao-conteudo .tabcontent {
+    color: red;
+}
 main.content .caixa-padrao-conteudo-esquerda-foto {
 float: left;
 width: 30%;
@@ -740,6 +772,17 @@ main.content .caixa-padrao-conteudo-botoes {
 .summary-box .value {
     font-size: 2rem;
 }
+
+.footer2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* vertical */
+    padding-right: 20px;
+    font-size: 1.2rem;
+    background-color: #222;
+    color: #FFF;
+}
+
 footer.footer {
     display: flex;
     grid-area: footer;
